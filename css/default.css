@@ -22,6 +22,7 @@ body::before {
     transform: translate(-50%, -10%);
 
     background: #fff;
+    min-width: 400px;
     padding: 1em 2em;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
     color: rgb(4, 157, 245);
@@ -175,12 +176,17 @@ main {
 }
 
 @media only screen and (max-width: 576px) {
+    body::before {
+        clip-path: none;
+    }
+
     .form-group {
         margin: 1em 0;
     }
 
     .login {
-        width: 95vw;
+        width: 90%
     }
+
 }
 
