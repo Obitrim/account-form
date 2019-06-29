@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Account | Login / sign up </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+    <meta name="description" content="Some text to describe page">
+    <meta name="keywords" content="keywords to identify page on google search engine">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+</head>
+
+<body>
+
+    <form class="login">
+        <header>
+            <h2 id="heading"> Welcome to the web club </h2>
+            <i class="fa fa-graduation-cap"></i>
+        </header>
+        <main>
+            <div class="form-group">
+                <input class="form-control" type="text" name="username" required autocomplete="name" />
+                <label class="form-label"> Username </label>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="password" required />
+                <label class="form-label"> Password </label>
+            </div>
+            <div class="form-group form-group-email">
+                <input class="form-control" type="email" name="email" required />
+                <label class="form-label"> Email </label>
+            </div>
+
+            <button class="btn-login" type="button"> Login </button>
+
+            <p class="form-group">
+                or <a id="sign-up-link" href="#">sign up</a> for impressive content
+            </p>
+        </main>
+    </form>
+
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>
