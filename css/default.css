@@ -3,6 +3,7 @@
     font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
 }
 
+
 body::before {
     content: "";
 
@@ -17,25 +18,27 @@ body::before {
     clip-path: polygon(0 0, 80% 120%, 0 120%);
 }
 
-/* container */
+
+/* wrapper */
 .login {
     position: absolute;
     left: 50%;
     top: 10%;
     transform: translate(-50%, -10%);
 
-    background: #fff;
-    min-width: 400px;
+    width: 90vw;
     padding: 1em 2em;
+    background: #fff;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
     color: rgb(4, 157, 245);
 }
 
 
+
+/* content header */
 header {
     text-align: center;
 }
-
 
 header h2 {
     font-size: 2rem;
@@ -47,15 +50,15 @@ header i.fa-graduation-cap {
 }
 
 
+/* main */
 main {
     margin: 5em 0;
-    text-align: center;
 }
-
 
 .form-group {
     position: relative;
-    margin: 2em 3em;
+    margin: 3em auto;
+    width: 70%;
 }
 
 .form-group label {
@@ -71,12 +74,13 @@ main {
     pointer-events: none;
 }
 
+
 .form-group input {
-    width: 100%;
     border: none;
     padding: 3px 0;
     border-bottom: 1px solid rgb(0, 162, 255);
     font-size: 0.9rem;
+    width: 100%;
 }
 
 .form-group input:focus {
@@ -105,16 +109,21 @@ main {
 /* login button */
 
 .btn-login {
-    padding: 10px 60px;
+    display: block;
     border: none;
-    margin: 2em 0;
-    background: rgba(255, 166, 0, 0.945);
+    width: 70%;
+    margin: 2em auto;
     color: #fff;
+    padding: 10px 60px;
+    background: rgba(255, 166, 0, 0.945);
 }
 
 .btn-login:hover {
     cursor: pointer;
 }
+
+
+
 
 /* sign up / sign in link */
 #sign-up-link:link,
@@ -178,32 +187,20 @@ main {
     }
 }
 
-@media only screen and (max-width: 576px) {
-    body{
-        overflow: hidden;
-    }
 
+/* footer  */
+footer {
+    text-align: center;
+}
+
+
+@media only screen and (min-width: 576px){
     .login {
-        min-width: 350px;
-    }
-
-    body::before {
-        clip-path: none;
+        max-width: 500px;
+        padding: 2em 3em;
     }
 
     .form-group {
-        margin: 3em 1em;
-    }
-
-    .login {
-        width: 90vw;
-    }
-
-}
-
-@media only screen and (max-width: 350px) {
-    .login {
-        min-width: 90vw;
+        max-width: 400px;
     }
 }
-
