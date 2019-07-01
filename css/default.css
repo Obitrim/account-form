@@ -184,11 +184,11 @@ main {
     }
 
     .form-group {
-        margin: 1em 0;
+        margin: 20px 0;
     }
 
     .login {
-        width: 90%
+        width: 90vw;
     }
 
 }
