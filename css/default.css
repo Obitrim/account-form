@@ -10,8 +10,8 @@ body::before {
     position: absolute;
     left: 0;
     top: 0;
-    width: 100vw;
-    height: 100vh;
+    min-width: 100vw;
+    min-height: 100vh;
 
     overflow: hidden;
     background: rgb(0, 162, 255);
@@ -23,8 +23,8 @@ body::before {
 .login {
     position: absolute;
     left: 50%;
-    top: 10%;
-    transform: translate(-50%, -10%);
+    top: 50%;
+    transform: translate(-50%, -50%);
 
     width: 90vw;
     padding: 1em 2em;
