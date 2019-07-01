@@ -9,8 +9,8 @@ body::before {
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 
     overflow: hidden;
     background: rgb(0, 162, 255);
@@ -183,17 +183,27 @@ main {
         overflow: hidden;
     }
 
+    .login {
+        min-width: 350px;
+    }
+
     body::before {
         clip-path: none;
     }
 
     .form-group {
-        margin: 20px 0;
+        margin: 1em 0;
     }
 
     .login {
         width: 90vw;
     }
 
+}
+
+@media only screen and (max-width: 350px) {
+    .login {
+        min-width: 90vw;
+    }
 }
 
