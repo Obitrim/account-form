@@ -15,35 +15,83 @@
 </head>
 
 <body>
-
-    <form class="login">
-        <header>
-            <h2 id="heading"> Welcome to the web club </h2>
-            <i class="fa fa-graduation-cap"></i>
-        </header>
-        <main>
-            <div class="form-group">
-                <input class="form-control" type="text" name="username" required autocomplete="name" />
-                <label class="form-label"> Username </label>
-            </div>
-            <div class="form-group">
-                <input class="form-control" type="password" name="password" required />
-                <label class="form-label"> Password </label>
-            </div>
-            <div class="form-group form-group-email">
-                <input class="form-control" type="email" name="email" required />
-                <label class="form-label"> Email </label>
-            </div>
-
-            <button class="btn-login" type="button"> Login </button>
-
-            <footer>
-                or <a id="sign-up-link" href="#">sign up</a> for impressive content
-            </footer>
-        </main>
-    </form>
-
-    <script src="./scripts/script.js"></script>
+    <main class="AppWrapper">
+        <div class="AuthScreens">
+            <form action="#" class="AuthScreens__Screen">
+                <div class="Header TextCenter">
+                    <i class="fa fa-graduation-cap Header__Icon"></i>
+                    <h2 class="Header__Heading">Login</h2>
+                </div>
+                <div class="FormContent">
+                    <div class="FormContent__FormGroup">
+                        <input class="FormContent__FormGroup__FormControl" 
+                            type="email" 
+                            name="email" 
+                            data-validate
+                            pattern="[a-zA-Z0-9]{3,}@[a-zA-Z]{3,}.[a-zA-Z]{2,}"
+                            required 
+                            />
+                        <label class="FormContent__FormGroup__Label"> Email </label>
+                    </div>
+                    <div class="FormContent__FormGroup">
+                        <input class="FormContent__FormGroup__FormControl" 
+                            type="password" 
+                            name="password"
+                            data-validate
+                            minlength="6" 
+                            required 
+                            />
+                        <label class="FormContent__FormGroup__Label"> Password </label>
+                    </div>
+                </div>
+                <button class="SubmitBtn" type="submit"> Login </button>
+                <p class="TextCenter">Don't have an account? 
+                    <button type="button" class="SwitchBtn SwitchBtn--Register">Register</button>
+                </p>
+            </form>
+            <form action="#" class="AuthScreens__Screen">
+                 <div class="Header TextCenter">
+                    <i class="fa fa-graduation-cap Header__Icon"></i>
+                    <h2 class="Header__Heading">Register</h2>
+                </div>
+                 <div class="FormContent">
+                    <div class="FormContent__FormGroup">
+                        <input class="FormContent__FormGroup__FormControl" 
+                            type="text" 
+                            name="username" 
+                            data-validate
+                            required 
+                            />
+                        <label class="FormContent__FormGroup__Label"> Username </label>
+                    </div>
+                    <div class="FormContent__FormGroup">
+                        <input class="FormContent__FormGroup__FormControl" 
+                            type="email" 
+                            name="email" 
+                            data-validate
+                            pattern="[a-zA-Z0-9]{3,}@[a-zA-Z]{3,}.[a-zA-Z]{2,}"
+                            required 
+                            />
+                        <label class="FormContent__FormGroup__Label"> Email </label>
+                    </div>
+                    <div class="FormContent__FormGroup">
+                        <input class="FormContent__FormGroup__FormControl" 
+                            type="password" 
+                            name="password"
+                            data-validate
+                            minlength="6" 
+                            required 
+                            />
+                        <label class="FormContent__FormGroup__Label"> Password </label>
+                    </div>
+                </div>
+                <button class="SubmitBtn" type="submit"> Register </button>
+                <p class="TextCenter">Already have an account? 
+                    <button type="button" class="SwitchBtn SwitchBtn--Login">Login</button>
+                </p>
+            </form>
+        </div>
+    </main>
+    <!--<script src="./scripts/script.js"></script>-->
 </body>
-
 </html>

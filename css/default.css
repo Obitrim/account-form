@@ -3,6 +3,15 @@
     font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
 }
 
+body {
+    --white: #ffffff;
+    --box-shadow-color: rgba(0, 0, 0, 0.15);
+    --main-content-max-width: 450px;
+    --transition-speed: 250px;
+    --warning: rgba(255, 166, 0, 0.945);
+
+    overflow-x: hidden;
+}
 
 body::before {
     content: "";
@@ -13,55 +22,89 @@ body::before {
     min-width: 100vw;
     min-height: 100vh;
 
-    overflow: hidden;
+    overflow-x: hidden;
     background: rgb(0, 162, 255);
     clip-path: polygon(0 0, 80% 120%, 0 120%);
+    z-index: 1;
 }
 
-
-/* wrapper */
-.login {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-
-    width: 90vw;
-    padding: 1em 2em;
-    background: #fff;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-    color: rgb(4, 157, 245);
-}
-
-
-
-/* content header */
-header {
+.TextCenter {
     text-align: center;
 }
 
-header h2 {
-    font-size: 2rem;
-    font-weight: bold;
+.AppWrapper {
+    max-width: var(--main-content-max-width);
+    margin: 2em auto;
+    background-color: var(--white);
+    box-shadow: 0 0 15px var(--box-shadow-color);
+
+    position: relative;
+    overflow-x: hidden;
+    z-index: 9;
 }
 
-header i.fa-graduation-cap {
+.AuthScreens {
+    width: calc(var(--main-content-max-width) * 2);
+    display: flex;
+    transition: margin-left var(--transition-speed);
+}
+
+.AuthScreens--ShiftLeft {
+    margin-left: -100%;
+}
+
+.AuthScreens__Screen {
+    flex: 1;
+    padding: 1.4rem;
+    padding-top: 2rem;
+}
+
+.Header {
+    text-align: center;
+}
+
+.Header__Heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.Header__Icon {
     font-size: 3rem;
 }
 
-
-/* main */
-main {
-    margin: 5em 0;
-}
-
-.form-group {
+.FormContent__FormGroup {
     position: relative;
     margin: 3em auto;
-    width: 70%;
+    width: 80%;
 }
 
-.form-group label {
+.FormContent__FormGroup__FormControl {
+    border: none;
+    padding: 3px 0;
+    border-bottom: 1px solid rgb(0, 162, 255);
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+.FormContent__FormGroup__FormControl:focus {
+    outline: none;
+}
+
+.FormContent__FormGroup__FormControl:valid~label,
+.FormContent__FormGroup__FormControl:focus~label {
+    bottom: calc(100% + 0.5rem);
+}
+
+.FormContent__FormGroup__FormControl:invalid {
+    border-color: grey;
+}
+
+.FormContent__FormGroup__FormControl:invalid~label {
+    color: grey;
+}
+
+.FormContent__FormGroup__Label {
     position: absolute;
     bottom: 4px;
     left: 0;
@@ -74,133 +117,42 @@ main {
     pointer-events: none;
 }
 
-
-.form-group input {
-    border: none;
-    padding: 3px 0;
-    border-bottom: 1px solid rgb(0, 162, 255);
-    font-size: 0.9rem;
-    width: 100%;
-}
-
-.form-group input:focus {
-    outline: none;
-}
-
-.form-group input:valid~label,
-.form-group input:focus~label {
-    bottom: 100%;
-}
-
-.form-group input:invalid {
-    border-color: grey;
-}
-
-.form-group input:invalid~label {
-    color: grey;
-}
-
-.form-group-email {
-    display: none;
-}
-
-
-
-/* login button */
-
-.btn-login {
+/*Buttons*/
+.SubmitBtn {
     display: block;
-    border: none;
-    width: 70%;
+    width: 80%;
+    border: 1px solid var(--warning);
     margin: 2em auto;
-    color: #fff;
     padding: 10px 60px;
-    background: rgba(255, 166, 0, 0.945);
+
+    font-size: 1.1rem;
+    font-weight: 550;
+
+    color: #fff;
+    background: var(--warning);
+    transition: var(--transition-speed);
 }
 
-.btn-login:hover {
+.SubmitBtn:hover {
     cursor: pointer;
+    color: var(--warning);
+    background-color: transparent;
 }
 
-
-
-
-/* sign up / sign in link */
-#sign-up-link:link,
-#sign-up-link:active {
-    color: rgba(255, 166, 0, 0.945);
-    font-weight: 470;
-    text-decoration: none;
+.SwitchBtn {
+    display: inline;
+    border: none;
+    background-color: transparent;
+    color: var(--warning);
 }
 
-#sign-up-link:hover {
-    text-decoration: underline;
+.SwitchBtn:hover {
+    cursor: pointer;
+    opacity: 0.85;
 }
-
-.fade-out {
-    animation: fade_out 1s forwards;
-}
-
-@-webkit-keyframes fade_out {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes fade_out {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-
-
-.fade-in {
-    animation: fade_in 1s forwards;
-}
-
-@-webkit-keyframes fade_in {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes fade_in {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-
-/* footer  */
-footer {
-    text-align: center;
-}
-
 
 @media only screen and (min-width: 576px){
-    .login {
-        max-width: 500px;
-        padding: 2em 3em;
-    }
-
-    .form-group {
+    .FormContent__FormGroup {
         max-width: 400px;
     }
 }
