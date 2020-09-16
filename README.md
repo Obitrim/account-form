@@ -1,9 +1,8 @@
-# Account Form
+## Account Form
 Front-end of a form with client-side validation.
 
 ## Screenshots
 ![screenshot](https://github.com/Obitrim/account-form/blob/master/images/account-form-login.png)
-
 ![screenshot](https://github.com/Obitrim/account-form/blob/master/images/account-form-register.png)
 
 ## Technologies
@@ -12,8 +11,8 @@ Front-end of a form with client-side validation.
 3. Core Javascript
 
 ## Usage instructions
-```git
 Clone this repository onto your local machine using the command below in your command line.
 git must be Installed
-**git clone **
+```git
+**git clone https://github.com/Obitrim/account-form.git**
 ```
