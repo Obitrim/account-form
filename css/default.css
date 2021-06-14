@@ -27,7 +27,6 @@ body::before {
     min-width: 100vw;
     min-height: 100vh;
 
-    overflow-x: hidden;
     background: var(--primary);
     clip-path: polygon(0 0, 80% 120%, 0 120%);
     z-index: 1;
@@ -38,6 +37,7 @@ body::before {
 }
 
 .AppWrapper {
+    border-radius: 8px;
     max-width: var(--main-content-max-width);
     margin: 2rem auto;
     background-color: var(--white);
@@ -61,12 +61,12 @@ body::before {
 .AuthScreens__Screen {
     flex: 1;
     padding: 1.4rem;
-    padding-top: 2rem;
 }
 
 .Header {
     text-align: center;
     color: var(--primary);
+    padding-top: 2rem;
 }
 
 .Header__Heading {
