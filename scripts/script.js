@@ -1,5 +1,6 @@
 (function () {
     // Dom nodes
+    const headerText = document.querySelector(".Header__Heading");
     const authScreensWrapper = document.querySelector(".AuthScreens");
     const switchToLoginBtn = document.querySelector(".SwitchBtn--Login");
     const loginForm = document.querySelector(".AuthScreens__Screen--Login");
@@ -13,6 +14,8 @@
     switchToRegisterBtn.addEventListener('click', switchAuthScreen());
     switchToLoginBtn.addEventListener('click', switchAuthScreen(false));
         
+
+    headerText.innerText = "Login";
     /**
     *
     * @param {Node} formNode 
@@ -74,6 +77,7 @@
         return evt => {
             evt.preventDefault();
             evt.stopPropagation();
+            headerText.innerText = loginScreen ? "Register" : "Login";
             if(loginScreen){
                 authScreensWrapper.classList.add('AuthScreens--ShiftLeft')
             } else {
